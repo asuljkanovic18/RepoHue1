@@ -22,7 +22,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
         if(p%2!=0||p%3!=0){
             return true;
         }
-        return false;
+        return true;
     }
 
     @Override
