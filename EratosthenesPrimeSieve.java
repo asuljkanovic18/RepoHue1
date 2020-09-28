@@ -10,16 +10,21 @@ package primegit.RepoHue1;
  * @author anel
  */
 public class EratosthenesPrimeSieve implements PrimeSieve{
-  
-    int ober;
     
-    public EratosthenesPrimeSieve(int N){
-        this.ober = N;
+    public EratosthenesPrimeSieve(){}
+    
+    public static void main(String[] args) {
+        EratosthenesPrimeSieve er = new EratosthenesPrimeSieve();
+        int a = 10;
+        er.Primerechner(a);
     }
 
     @Override
     public boolean isPrime(int p) {
-        if(p%2!=0||p%3!=0){
+        if(p%2!=0&&p%3!=0){
+            return true;
+        }
+        else if(p==3||p==2){
             return true;
         }
         return false;
@@ -61,9 +66,9 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
                 if(isPrime(i-j)==true){
                     int y = i-j;
                     System.out.println( i +" summe: " + i + " = " + j +" + " + y);
-                }else if(isPrime(i-h)==true){
-                int y = i-j;
-                System.out.println( i +" summe: " + i + " = " + j +" + " + y);
+                }else if(isPrime(i-h) == true){
+                int y = i-h;
+                System.out.println( i +" summe: " + i + " = " + h +" + " + y);
                 }
             }
         }
