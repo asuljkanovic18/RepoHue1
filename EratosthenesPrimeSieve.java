@@ -36,11 +36,11 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
             for (int i = prim; i <= max / prim; i++) {
                final int zahl = i*prim;
                if (zahl < max)
-                  zahlen[zahl] = true; 
+                  zahlen[zahl] = false; 
          }
       }
 
-      int anzahl = 0;
+      int anzahl = 1;
       for (boolean istPrim : zahlen)
         if (istPrim)
           anzahl++;
