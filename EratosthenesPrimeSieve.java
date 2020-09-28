@@ -54,7 +54,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
    }
     
     public void Primerechner(int grenze){
-        int j = 1;
+        int j = 2;
         int h = 3;
         for (int i = 3; i < grenze; i++) {
             if(i%2 == 0){
