@@ -15,18 +15,21 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     
     public static void main(String[] args) {
         EratosthenesPrimeSieve er = new EratosthenesPrimeSieve();
-        int a = 10;
+        int a = 33;
+        System.out.println(er.isPrime(a));
         er.Primerechner(a);
+        
     }
 
     @Override
     public boolean isPrime(int p) {
-        if(p%2!=0&&p%3!=0){
+        if(p%2!=0&&p%3!=0&&p%5!=0){
             return true;
         }
         else if(p==3||p==2){
             return true;
         }
+        
         return false;
     }
 
@@ -46,14 +49,16 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
       }
 
       int anzahl = 0;
-      for (boolean istPrim : zahlen)
+      for (boolean istPrim : zahlen){
         if (istPrim)
           anzahl++;
+      }
       int[] primzahlen = new int[anzahl];
       int index = 0;
-      for (int i = 0; i < zahlen.length; i++)
+      for (int i = 0; i < zahlen.length; i++){
         if (zahlen[i])
           primzahlen[index++] = i;
+      }
       primzahlen[0] = 2;
       return primzahlen;
    }
@@ -61,6 +66,8 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     public void Primerechner(int grenze){
         int j = 2;
         int h = 3;
+        int z = 5;
+        int b = 7;
         for (int i = 3; i < grenze; i++) {
             if(i%2 == 0){
                 if(isPrime(i-j)==true){
@@ -69,6 +76,12 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
                 }else if(isPrime(i-h) == true){
                 int y = i-h;
                 System.out.println( i +" summe: " + i + " = " + h +" + " + y);
+                }else if(isPrime(i-z)==true){
+                    int y = i-z;
+                    System.out.println( i +" summe: " + i + " = " + z +" + " + y);
+                }else if(isPrime(i-b)==true){
+                    int y = i-b;
+                    System.out.println( i +" summe: " + i + " = " + b +" + " + y);
                 }
             }
         }
