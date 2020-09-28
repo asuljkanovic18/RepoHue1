@@ -40,7 +40,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
          }
       }
 
-      int anzahl = 1;
+      int anzahl = 0;
       for (boolean istPrim : zahlen)
         if (istPrim)
           anzahl++;
@@ -54,7 +54,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
    }
     
     public void Primerechner(int grenze){
-        int j = 2;
+        int j = 1;
         int h = 3;
         for (int i = 3; i < grenze; i++) {
             if(i%2 == 0){
