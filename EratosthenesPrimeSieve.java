@@ -22,7 +22,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
         if(p%2!=0||p%3!=0){
             return true;
         }
-        return true;
+        return false;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
             for (int i = prim; i <= max / prim; i++) {
                final int zahl = i*prim;
                if (zahl < max)
-                  zahlen[zahl] = false; 
+                  zahlen[zahl] = true; 
          }
       }
 
