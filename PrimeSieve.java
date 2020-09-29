@@ -12,5 +12,5 @@ package primegit.RepoHue1;
 interface PrimeSieve {
     public boolean isPrime(int p);
         
-        public void printPrimes();
+        public void PrintPrimes(int max);
 }

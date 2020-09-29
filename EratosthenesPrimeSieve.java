@@ -15,52 +15,40 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     
     public static void main(String[] args) {
         EratosthenesPrimeSieve er = new EratosthenesPrimeSieve();
-        int a = 33;
-        System.out.println(er.isPrime(a));
-        er.Primerechner(a);
+        int a = 1657;
+        er.PrintPrimes(a);
+        
         
     }
 
     @Override
     public boolean isPrime(int p) {
-        if(p%2!=0&&p%3!=0&&p%5!=0){
-            return true;
+        boolean erg = true;
+        if(p==0||p==1){
+            erg = false;
         }
-        else if(p==3||p==2){
-            return true;
+        if(p==2||p==3){
+            erg = true;
         }
-        
-        return false;
+        for (int i = 2; i < p; i++) {
+            if(i*i==p||p%i==0){
+                erg= false;
+            }
+            
+        }  
+        return erg;
     }
 
     @Override
-    public int[] eratosthenes(int max) {
-      final int maxprim = (int)Math.sqrt(max)+2;
-      boolean[] zahlen = new boolean[max]; 
-      for (int i = 0; i < max; i++)
-         zahlen[i] = i%2 == 1;
-      for (int prim = 3; prim < maxprim; prim += 2) 
-         if (zahlen[prim]) { 
-            for (int i = prim; i <= max / prim; i++) {
-               final int zahl = i*prim;
-               if (zahl < max)
-                  zahlen[zahl] = false; 
-         }
-      }
-
-      int anzahl = 0;
-      for (boolean istPrim : zahlen){
-        if (istPrim)
-          anzahl++;
-      }
-      int[] primzahlen = new int[anzahl];
-      int index = 0;
-      for (int i = 0; i < zahlen.length; i++){
-        if (zahlen[i])
-          primzahlen[index++] = i;
-      }
-      primzahlen[0] = 2;
-      return primzahlen;
+    public void PrintPrimes(int max) {
+        int[] primzahlen = new int[max];
+        for (int i = 0; i <= max; i++) {
+            if(isPrime(i)==true)
+            {
+                System.out.println(i);
+            }
+        }
+        
    }
     
     public void Primerechner(int grenze){
